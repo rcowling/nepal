@@ -107,7 +107,7 @@ button:focus {
 	<div class="nav-wrapper">		 
 	  <a href="#!" class="brand-logo center" style="font-family: 'Kalam', cursive; font-size: 30px;">
 	  <a href="#" data-activates="mobile-demo" class="button-collapse show-on-large"><i class="material-icons">menu</i></a> 
-	  <img src="logo1.png" alt="nepal logo" style="width:117px;height:80px;padding-top:1px;">		  
+	  <img src="logo1.png" alt="nepal logo" style="width:100px;height:72px;padding-top:1px;">		  
 		<ul class="right hide-on-med-and-down">	   
 	  </ul>
 	  <ul class="side-nav" id="mobile-demo">
@@ -156,9 +156,16 @@ button:focus {
 </div>     
 	
 <ul id="dropdown2" class="dropdown-content">
-  <li onclick="f_4stage(map);"><a href="#">4STAGE</a></li>
-  <li onclick="f_ultra100(map);"><a href="#">ULTRA100</a></li>
-  <li onclick="f_ultra170(map);"><a href="#">ULTRA170</a></li>  
+  <li onclick="allstages(map);"><a href="#">ALL STAGES</a></li>    
+  <li onclick="stage1(map);"><a href="#">STAGE 1</a></li>
+  <li onclick="stage2(map);"><a href="#">STAGE 2</a></li>
+  <li onclick="stage3(map);"><a href="#">STAGE 3</a></li>
+  <li onclick="stage4(map);"><a href="#">STAGE 4</a></li>
+  <li onclick="stage5(map);"><a href="#">STAGE 5</a></li>
+  <li onclick="stage6(map);"><a href="#">STAGE 6</a></li>
+  <li onclick="stage7(map);"><a href="#">STAGE 7</a></li>
+  <li onclick="larkya(map);"><a href="#">LARKYA PASS CROSSING</a></li>
+  <li onclick="ruila(map);"><a href="#">RUI LA ACTIVE REST DAY 20 KM</a></li>    
 </ul>
 <a class="dropdown-button btn black" href="#!" data-activates="dropdown2">Routes
 <i class="material-icons right">map</i>
@@ -178,7 +185,10 @@ var map = new mapboxgl.Map({
 // Add controls to the map
 // Add zoom and rotation controls to the map.
 map.addControl(new mapboxgl.NavigationControl());
-map.addControl(new mapboxgl.FullscreenControl());	
+map.addControl(new mapboxgl.FullscreenControl());
+// Add a scale bar
+map.addControl(new mapboxgl.ScaleControl({position: 'bottom-right'}));    
+    
 	
 // Add geolocation control to the map.	 
 map.addControl(new mapboxgl.GeolocateControl({
@@ -188,28 +198,133 @@ map.addControl(new mapboxgl.GeolocateControl({
 	trackUserLocation: true
 })); 
 
-function f_4stage(map) {
-	map.setLayoutProperty('layer_4stage', 'visibility', 'visible');
-	map.setLayoutProperty('layer_ultra170', 'visibility', 'none');
-	map.setLayoutProperty('layer_ultra100', 'visibility', 'none');
+// Functions to set the visibility of the stage selected from the dropdown menu    
+function allstages(map) {
+	map.setLayoutProperty('layer_stage1', 'visibility', 'visible');
+	map.setLayoutProperty('layer_stage2', 'visibility', 'visible');
+	map.setLayoutProperty('layer_stage3', 'visibility', 'visible');
+    map.setLayoutProperty('layer_stage4', 'visibility', 'visible');
+    map.setLayoutProperty('layer_stage5', 'visibility', 'visible');
+	map.setLayoutProperty('layer_stage6', 'visibility', 'visible');
+	map.setLayoutProperty('layer_stage7', 'visibility', 'visible');
+    map.setLayoutProperty('layer_ruila', 'visibility', 'visible');
+    map.setLayoutProperty('layer_larkya', 'visibility', 'visible');
+}
+    
+function stage1(map) {
+	map.setLayoutProperty('layer_stage1', 'visibility', 'visible');
+	map.setLayoutProperty('layer_stage2', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage3', 'visibility', 'none');
+    map.setLayoutProperty('layer_stage4', 'visibility', 'none');
+    map.setLayoutProperty('layer_stage5', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage6', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage7', 'visibility', 'none');
+    map.setLayoutProperty('layer_ruila', 'visibility', 'none');
+    map.setLayoutProperty('layer_larkya', 'visibility', 'none');
 }
 	
-function f_ultra170(map) {
-	map.setLayoutProperty('layer_4stage', 'visibility', 'none');
-	map.setLayoutProperty('layer_ultra170', 'visibility', 'visible');
-	map.setLayoutProperty('layer_ultra100', 'visibility', 'none');
+function stage2(map) {
+	map.setLayoutProperty('layer_stage1', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage2', 'visibility', 'visible');
+	map.setLayoutProperty('layer_stage3', 'visibility', 'none');
+    map.setLayoutProperty('layer_stage4', 'visibility', 'none');
+    map.setLayoutProperty('layer_stage5', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage6', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage7', 'visibility', 'none');
+    map.setLayoutProperty('layer_ruila', 'visibility', 'none');
+    map.setLayoutProperty('layer_larkya', 'visibility', 'none');
 }	
 
-function f_ultra100(map) {
-	map.setLayoutProperty('layer_4stage', 'visibility', 'none');
-	map.setLayoutProperty('layer_ultra170', 'visibility', 'none');
-	map.setLayoutProperty('layer_ultra100', 'visibility', 'visible');
-} 
-	
+function stage3(map) {
+	map.setLayoutProperty('layer_stage1', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage2', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage3', 'visibility', 'visible');
+    map.setLayoutProperty('layer_stage4', 'visibility', 'none');
+    map.setLayoutProperty('layer_stage5', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage6', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage7', 'visibility', 'none');
+    map.setLayoutProperty('layer_ruila', 'visibility', 'none');
+    map.setLayoutProperty('layer_larkya', 'visibility', 'none');
+}
+
+function stage4(map) {
+	map.setLayoutProperty('layer_stage1', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage2', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage3', 'visibility', 'none');
+    map.setLayoutProperty('layer_stage4', 'visibility', 'visible');
+    map.setLayoutProperty('layer_stage5', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage6', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage7', 'visibility', 'none');
+    map.setLayoutProperty('layer_ruila', 'visibility', 'none');
+    map.setLayoutProperty('layer_larkya', 'visibility', 'none');
+}
+    
+function stage5(map) {
+	map.setLayoutProperty('layer_stage1', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage2', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage3', 'visibility', 'none');
+    map.setLayoutProperty('layer_stage4', 'visibility', 'none');
+    map.setLayoutProperty('layer_stage5', 'visibility', 'visible');
+	map.setLayoutProperty('layer_stage6', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage7', 'visibility', 'none');
+    map.setLayoutProperty('layer_ruila', 'visibility', 'none');
+    map.setLayoutProperty('layer_larkya', 'visibility', 'none');
+}
+    
+function stage6(map) {
+	map.setLayoutProperty('layer_stage1', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage2', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage3', 'visibility', 'none');
+    map.setLayoutProperty('layer_stage4', 'visibility', 'none');
+    map.setLayoutProperty('layer_stage5', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage6', 'visibility', 'visible');
+	map.setLayoutProperty('layer_stage7', 'visibility', 'none');
+    map.setLayoutProperty('layer_ruila', 'visibility', 'none');
+    map.setLayoutProperty('layer_larkya', 'visibility', 'none');
+}	
+    
+function stage7(map) {
+	map.setLayoutProperty('layer_stage1', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage2', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage3', 'visibility', 'none');
+    map.setLayoutProperty('layer_stage4', 'visibility', 'none');
+    map.setLayoutProperty('layer_stage5', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage6', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage7', 'visibility', 'visible');
+    map.setLayoutProperty('layer_ruila', 'visibility', 'none');
+    map.setLayoutProperty('layer_larkya', 'visibility', 'none');
+}
+    
+function ruila(map) {
+	map.setLayoutProperty('layer_stage1', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage2', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage3', 'visibility', 'none');
+    map.setLayoutProperty('layer_stage4', 'visibility', 'none');
+    map.setLayoutProperty('layer_stage5', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage6', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage7', 'visibility', 'none');
+    map.setLayoutProperty('layer_ruila', 'visibility', 'visbile');
+    map.setLayoutProperty('layer_larkya', 'visibility', 'none');
+}
+
+function larkya(map) {
+	map.setLayoutProperty('layer_stage1', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage2', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage3', 'visibility', 'none');
+    map.setLayoutProperty('layer_stage4', 'visibility', 'none');
+    map.setLayoutProperty('layer_stage5', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage6', 'visibility', 'none');
+	map.setLayoutProperty('layer_stage7', 'visibility', 'none');
+    map.setLayoutProperty('layer_ruila', 'visibility', 'none');
+    map.setLayoutProperty('layer_larkya', 'visibility', 'visible');
+}
+    
+// Setup variables to load goejson files to the map    
 var url_stage1  		= 'stage1.geojson';
 var url_stage2  		= 'stage2.geojson';
 var url_stage3  		= 'stage3.geojson';
 var url_stage4  		= 'stage4.geojson';
+var url_stage5  		= 'stage5.geojson';    
 var url_stage6  		= 'stage6.geojson';
 var url_stage7  		= 'stage7.geojson';
 var url_larkya  		= 'larkyapass.geojson';
@@ -347,6 +462,22 @@ map.on('load', function () {
 	});
     
     // This is for the missing 100km stage. Simply add the file path to the variable declared above. 
+	map.addSource('source_stage5', { type: 'geojson', data: url_stage5 });
+	
+	map.addLayer({
+		"id": "layer_stage5",
+		"type": "line",
+		"source": "source_stage5",
+	   'layout': {
+			'visibility': 'visible'
+		},
+		paint: {
+			'line-color': 'purple',
+			'line-width': 3,			
+		}
+	});
+    
+    // This is for the missing 100km stage. Simply add the file path to the variable declared above. 
 	map.addSource('source_stage6', { type: 'geojson', data: url_stage6 });
 	
 	map.addLayer({
@@ -398,14 +529,14 @@ map.on('load', function () {
 	map.addSource('source_ruila', { type: 'geojson', data: url_ruila });
 	
 	map.addLayer({
-		"id": "layer_ruiya",
+		"id": "layer_ruila",
 		"type": "line",
 		"source": "source_ruila",
 	   'layout': {
 			'visibility': 'visible'
 		},
 		paint: {
-			'line-color': 'grey',
+			'line-color': 'blue',
 			'line-width': 3,			
 		}
 	});
