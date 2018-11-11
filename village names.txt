@@ -1,0 +1,15 @@
+0 - Grächen - Europahütte
+1 - Europahütte - Täschalp
+2 - Täschalp - Zermatt
+3 - Zermatt - Gandegghütte
+4 - Gandegghütte - Lago Cima Bianche
+5 - Lago Cima Bianche - Rifugio Ferraro
+6 - Rifugio Ferraro - Gressoney La Trinite
+7 - Gressoney La Trinite - Passo dei Salati
+8 - Passo dei Salati - Alagna
+9 - Alagna - Quarazza
+10 - Quarazza - Macugnaga
+11 - Macugnaga - Monte Moro
+12 - Monte Moro - Saas Fee
+13 - Saas Fee - Hannigalp
+14 - Hannigalp - Grächen
